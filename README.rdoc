@@ -1,6 +1,19 @@
 = dublin-core-mapper
 
-Description goes here.
+A simple library, with not a lot of whizbang material, for capturing metadata and ultimately render the metadata based on http://dublincore.org/
+
+== Example
+
+  DublinCoreMapper.register do |dcm|
+    title('1234')
+    subject('Numeral representation of 1000 + 200 + 30 + 4')
+    subject('Math')
+  end
+
+
+== TODO
+ 
+render meta data
 
 == Copyright
 
