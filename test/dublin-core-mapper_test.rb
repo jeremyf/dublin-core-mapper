@@ -53,4 +53,8 @@ class DublinCoreMapperTest < Test::Unit::TestCase
     mock_data = MockData.new
     assert_equal [mock_data.subject], mock_data.metadata.subject
   end
+  
+  should 'render to_html_header' do
+    assert_match(/^#{Regexp.escape(%(<meta name="DCTERMS.subject" content="Numeral representation of 1000 + 200 + 30 + 4" />))}$/, @dublin_core_mapper.to_html_header)
+  end
 end
