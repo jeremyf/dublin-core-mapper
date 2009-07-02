@@ -1,14 +1,21 @@
 require 'test_helper'
 
 class DublinCoreMapperTest < Test::Unit::TestCase
-
+  class MockData
+    def subject; 'An awesome subject'; end
+    def metadata
+      DublinCoreMapper.register do |mapper|
+        mapper.subject(subject)
+      end
+    end
+  end
   def setup
-    @dublin_core_mapper = DublinCoreMapper.register do |dcm|
-      subject('Numeral representation of 1000 + 200 + 30 + 4')
-      title('1234')
-      subject('Math')
-      subject('')
-      type('')
+    @dublin_core_mapper = DublinCoreMapper.register do |mapper|
+      mapper.subject('Numeral representation of 1000 + 200 + 30 + 4')
+      mapper.title('1234')
+      mapper.subject('Math')
+      mapper.subject('')
+      mapper.type('')
     end
   end
 
@@ -30,7 +37,6 @@ class DublinCoreMapperTest < Test::Unit::TestCase
     end
   end
 
-
   should 'have an each method that ' do
     @yielded = []
     @dublin_core_mapper.each do |key, values|
@@ -41,5 +47,10 @@ class DublinCoreMapperTest < Test::Unit::TestCase
     assert_equal( ['subject', 'Numeral representation of 1000 + 200 + 30 + 4'],  @yielded[0])
     assert_equal( ['title', '1234'],  @yielded[1])
     assert_equal( ['subject', 'Math'],  @yielded[2])
+  end
+  
+  should "given an object with subject register that object's subject" do
+    mock_data = MockData.new
+    assert_equal [mock_data.subject], mock_data.metadata.subject
   end
 end

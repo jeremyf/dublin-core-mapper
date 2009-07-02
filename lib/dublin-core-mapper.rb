@@ -13,7 +13,7 @@ class DublinCoreMapper
 
   def initialize(&block)
     @elements = []
-    instance_eval(&block)
+    yield(self)
   end
   
   ATTRIBUTES.each do |attrib|
