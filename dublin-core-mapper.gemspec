@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{dublin-core-mapper}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeremy Friesen"]
@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "dublin-core-mapper.gemspec",
      "lib/dublin-core-mapper.rb",
      "test/dublin-core-mapper_test.rb",
      "test/test_helper.rb"
@@ -27,7 +28,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.4}
-  s.summary = %q{TODO}
+  s.summary = %q{A simple library for registering metadata via the dublin core standard}
   s.test_files = [
     "test/dublin-core-mapper_test.rb",
      "test/test_helper.rb"

@@ -5,7 +5,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "dublin-core-mapper"
-    gem.summary = %Q{TODO}
+    gem.summary = %Q{A simple library for registering metadata via the dublin core standard}
     gem.email = "jeremy.n.friesen@gmail.com"
     gem.homepage = "http://github.com/jeremyf/dublin-core-mapper"
     gem.authors = ["Jeremy Friesen"]
